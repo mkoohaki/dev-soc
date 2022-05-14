@@ -1,0 +1,31 @@
+{
+  "name": "dev-soc",
+  "version": "1.0.0",
+  "description": "An application as a scociety for developers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkoohaki/dev-soc.git"
+  },
+  "author": "Meisam Koohaki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkoohaki/dev-soc/issues"
+  },
+  "homepage": "https://github.com/mkoohaki/dev-soc#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.7",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.0",
+    "gravatar": "^1.8.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3",
+    "request": "^2.88.2"
+  }
+}
