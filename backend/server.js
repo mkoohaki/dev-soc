@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const config = require("config");
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.port || 8000;
+//const PORT = config.get("port");
 
 //Define Routes
 const usersRoute = require("./routes/api/users");

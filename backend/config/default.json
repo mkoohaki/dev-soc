@@ -1,0 +1,7 @@
+{
+    "port" : "5000",
+    "uri" : "mongodb+srv://meisam:6465@cluster0.qjiac.mongodb.net/dev-soc?retryWrites=true&w=majority",
+    "secret" : "developerSocial",
+    "githubClientId" : "58e19eb287af80f70d6a",
+    "githubSecret" : "5262a4089b5f3bea2114e23c3461ed057355f648 "
+}
