@@ -8,7 +8,7 @@ app.use(express.json({ estended: false }));
 //Connect database
 connectDB();
 
-require("dotenv").config();
+// require("dotenv").config();
 app.get("/", (req, res) => {
   res.send("API Running");
 });

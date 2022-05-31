@@ -193,6 +193,46 @@ router.put(
   }
 );
 
+// @route   PUT api/profile/education
+// @desc    Add profile experience
+// @access  Private
+router.put(
+  "/education",
+  [
+    auth,
+    check("school", "School name is required").not().isEmpty(),
+    check("degree", "Degree is required").not().isEmpty(),
+    check("from", "From date is required").not().isEmpty(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { school, degree, from, to, current, description } = req.body;
+    const newExp = {
+      school,
+      degree,
+      from,
+      to,
+      current,
+      description,
+    };
+
+    try {
+      const profile = await Profile.findOne({ user: req.user.id });
+      profile.education.unshift(newExp);
+      await profile.save();
+      res.json(profile);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
 // @route   GET api/profile/github/:username
 // @desc    Get user repos from Github
 // @access  Public
